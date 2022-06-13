@@ -13,7 +13,11 @@ const RenderInput = ({ outPutConsole }) => {
   /**
    * inputの中身があれば、outPutConsoleを実行
    */
-  const outPutValue = input && outPutConsole(input);
+  const outPutValue = useCallback(() => {
+    if (input) {
+      outPutConsole(input);
+    }
+  }, [input, outPutConsole]);
 
   return (
     <div>
