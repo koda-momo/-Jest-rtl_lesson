@@ -1,23 +1,24 @@
 import React, { useCallback, useState } from "react";
 
-const RenderInput = ({ outPutConsole }) => {
+const RenderInput = ({ outputConsole }) => {
   const [input, setInput] = useState("");
 
   /**
-   * 入力値をvalueに反映.
+   * クリックしたら発動.
+   * @remarks inputの値が無ければ発動しない
    */
-  const updateValue = useCallback((e) => {
-    setInput(e.target.value);
-  }, []);
+  const outputValue = useCallback(() => {
+    if (input) {
+      outputConsole(input);
+    }
+  }, [input, outputConsole]);
 
   /**
-   * inputの中身があれば、outPutConsoleを実行
+   * 入力値反映メソッド.
    */
-  const outPutValue = useCallback(() => {
-    if (input) {
-      outPutConsole(input);
-    }
-  }, [input, outPutConsole]);
+  const updateValue = (e) => {
+    setInput(e.target.value);
+  };
 
   return (
     <div>
@@ -25,9 +26,9 @@ const RenderInput = ({ outPutConsole }) => {
         type="text"
         placeholder="Enter"
         value={input}
-        onChange={(e) => updateValue(e)}
+        onChange={updateValue}
       />
-      <button onClick={outPutValue}>Console</button>
+      <button onClick={outputValue}>Console</button>
     </div>
   );
 };
