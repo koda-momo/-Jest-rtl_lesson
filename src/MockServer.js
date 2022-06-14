@@ -6,7 +6,7 @@ function MockServer() {
   const [clicked, setClicked] = useState(false);
 
   //取得情報ユーザの名前
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
   const [error, setError] = useState("");
 
   /**
@@ -18,7 +18,7 @@ function MockServer() {
         "https://jsonplaceholder.typicode.com/users/1"
       );
       const name = res.data.username;
-      setUserName(name);
+      setUsername(name);
 
       //処理が成功したらtrueに切替
       setClicked(true);
@@ -36,7 +36,7 @@ function MockServer() {
         {buttonText}
       </button>
 
-      {userName && <h3>{userName}</h3>}
+      {username && <h3>{username}</h3>}
       {error && <p data-testid="error">{error}</p>}
     </div>
   );
