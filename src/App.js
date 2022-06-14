@@ -6,6 +6,8 @@ import "./App.css";
 import RenderInput from "./RenderInput";
 import FrameworkList from "./FrameworkList";
 import UseEffectRender from "./UseEffectRender";
+import MockServer from "./MockServer";
+import CustomHooks from "./CustomHooks";
 
 function App() {
   const data = [
@@ -28,6 +30,8 @@ function App() {
         <RenderInput outputConsole={console.log} />
         <FrameworkList frameworks={data} />
         <UseEffectRender />
+        <MockServer />
+        <CustomHooks />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
