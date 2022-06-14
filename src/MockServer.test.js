@@ -83,6 +83,6 @@ describe("MockServerコンポーネントテスト", () => {
     expect(userNameScreen).toBeNull();
 
     //ボタンの属性(disabled)が存在するか否か
-    expect(buttonScreen).toHaveAttribute("disabled");
+    expect(buttonScreen).not.toHaveAttribute("disabled");
   });
 });
