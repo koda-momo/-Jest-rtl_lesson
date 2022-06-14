@@ -1,4 +1,4 @@
-# Getting Started with Create React App and Redux
+# rtl_lesson
 【Jest, React-Testing-Library】Jest練習用<a href="https://www.udemy.com/course/reacthooksreduxtoolkit/">Reactソフトウェアテスト(Hooks+ReduxToolKit時代のモダンテスト手法)</a>を参考にして作成
 
 ## ■使用技術
